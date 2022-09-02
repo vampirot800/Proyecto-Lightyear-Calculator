@@ -5,7 +5,7 @@ El proyecto **Lightyear Calculator** es un programa que tendra como funcion calc
 
 Este programa dara resultados de los periodos entre la variedad de cuerpos celestes de nuestro sistema solar a el sol.
 Lightyear Calculator sera actualizado de forma recurrente para en un futuro calcular distancias de lunas, estrellas, cometas y hasta otros sistemas solares o galaxias, dando resultados en km o años luz dependiendo de la distancia.
-En la primera version de este programa, El usuario ingresara un cuerpo celeste del sistema solar su preferencia y el programa le calculara  el periodo que existe entre el cuerpo spolicitado y el sol en años. (muy util si llevas fisica de primer semestre ;))
+En la primera version de este programa, El usuario ingresara un cuerpo celeste del sistema solar su preferencia y el programa le calculara  el periodo que existe entre el cuerpo solicitado y el sol en años o en meses, dependiendo si de el resultado es mayor o menor a 1 año. (muy util si llevas fisica de primer semestre ;))
 
 #### Pseudocodigo
 Inicio
