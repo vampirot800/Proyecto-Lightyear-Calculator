@@ -14,27 +14,26 @@ math.pow, math.sqrt
 
 Variables:
 constante k = 1, r, p
-funcion def calc_periodo(k,r)
-(Calculo para obtener periodo): res=math.sqrt((k)*(pow(r,3)))
+
+funciones:
+(Calculo para obtener periodo):
+def calc_periodo(k,r)
+ res=math.sqrt((k)*(pow(r,3)))
   return res
-  
- Si planeta = mercurio:
-   convertir radio (r) = 0.39
- Si planeta = venus:
-   convertir radio (r) = 0.72
- Si planeta = tierra:
-   convertir radio (r) = 1.00
- Si planeta = marte:
-   convertir radio (r) = 1.52
- Si planeta = jupiter:
-   convertir radio (r) = 5.20
- Si planeta = saturno:
-   convertir radio (r) = 9.54
- Si planeta = urano:
-   convertir radio (r) = 19.19
- Si planeta = neptuno:
-   convertir radio (r) = 30.06
-   
-   imprimir resultado de periodo
+
+(Calculo para convertir periodo a meses):
+calc_periodo*(12)
+
+(mensaje de resultado):
+imprimir ("El periodo orbital de",p,"en dar la vuelta al sol es de:")
+
+(tomar en cuenta p en mayusculas y minusculas)
+
+Dependiendo del planeta ingresado convertir "r" al radio correspondiente
+(mercurio,venus,tierra,marte,jupiter,saturno,urano,neptuno)
+
+opcion = calc_periodo
+si opcion > 1 = imprimir mensaje de resultado y calculo del periodo en años
+si opcion < 1 = imprimir mensaje de resultado y calculo de periodo en meses
   
 Fin
