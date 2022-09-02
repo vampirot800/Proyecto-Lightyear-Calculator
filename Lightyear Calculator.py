@@ -10,21 +10,36 @@ def calc_periodo(k,r):
     res=math.sqrt((k)*(pow(r,3)))
     return res
 
-if p == "mercurio":
+def calc_meses(k,r):
+    meses = (calc_periodo(k,r))*(12)
+    return meses
+
+def imprime_fin(p):
+    print("El periodo orbital de",p,"en dar la vuelta al sol es de:")
+
+
+if p.lower() == "mercurio":
     r = 0.39
-if p == "venus":
+if p.lower()== "venus":
     r = 0.72
-if p == "tierra":
+if p.lower() == "tierra":
     r = 1.00
-if p == "marte":
+if p.lower() == "marte":
     r = 1.52
-if p == "jupiter":
+if p.lower() == "jupiter":
     r = 5.20
-if p == "saturno":
+if p.lower() == "saturno":
     r = 9.54
-if p == "urano":
+if p.lower() == "urano":
     r = 19.19
-if p == "neptuno":
+if p.lower() == "neptuno":
     r = 30.06
 
-print ("El periodo orbital de",p, "en dar la vuelta al sol es de:",calc_periodo(k,r),"años")
+opcion = calc_periodo(k,r)
+
+if opcion < 1 :
+    (imprime_fin(p)),print(calc_meses(k,r),"meses")
+elif opcion > 1:
+    (imprime_fin(p)),print(calc_periodo(k,r),"años")
+elif opcion == 1:
+    (imprime_fin(p)),print(calc_periodo(k,r),"año")
