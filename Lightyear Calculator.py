@@ -17,7 +17,7 @@ def calcp_meses(k,r):
     return meses
 
 def imprime_fin1(p):
-    print("El periodo orbital de",p,"en completar una vuelta al sol es de:")
+    print( "\n\n" "El periodo orbital de",p,"en completar una vuelta al sol es de:")
 
 def imprime_fin4(l):
     print("\n",p,"cuenta con un numero de:",l,"lunas confirmadas")
@@ -55,10 +55,14 @@ while MenuPrincipal !=0:
     if MenuPrincipal == 1: 
         format = int(input("Como desea obtener el resultado?: \n 1: Años \n 2: Meses \n"))
         if format == 1:
-            (imprime_fin1(p)),print(calc_periodo(k,r),"años")
+            imprime_fin1(p)
+            print()
+            print(calc_periodo(k,r),"años")
+            print()
         elif format == 2:
             (imprime_fin1(p)),print(calcp_meses(k,r),"meses")
-
+            print()
+            
     elif MenuPrincipal == 4:
         (imprime_fin4(l))
 
