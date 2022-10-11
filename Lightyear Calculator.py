@@ -30,6 +30,7 @@ matriz = [planetas,radios_2,masas]
 
 #Funciones: Calculo del periodo, Calculo de el periodo en meses, Calculo del periodo en dias
 #,Calculo de gravedades, Impresiones de textos finales, Asignacion de posicion de planetas, Comparacion de planetas
+
 def calc_periodo(k,r):
     res = math.sqrt((k)*(pow(r,3)))
     return res
@@ -50,10 +51,11 @@ def calc_gravedad(gk,m,r_2):
     
 
 def imprime_fin1(p):
-    print( "\n\n" "El periodo orbital de",p,"aproximado en dar la vuelta al sol es de:")
+    print( "El periodo orbital de",p,"aproximado en dar la vuelta al sol es de:")
 
 def imprime_fin4(l):
     print("\nEl planeta",p,"cuenta con un numero de:",l,"lunas confirmadas")
+
 
 def posicion(planetas):
     return planetas.index(p)+1
@@ -87,35 +89,54 @@ while MenuPrincipal !=0:
     if MenuPrincipal == 1: 
         format = int(input("\nComo desea obtener el resultado?: \n 1: Años \n 2: Meses \n 3: Dias \nEscriba el numero de la opcion que desee:"))
         if format == 1:
+            print("\n--------")
             imprime_fin1(p)
-            print()
             print(calc_periodo(k,r),"años de la Tierra")
-            print()
+            print("--------")
         elif format == 2:
+            print("--------")
             imprime_fin1(p)
-            print()
             print(calcp_meses(k,r),"meses de la Tierra")
-            print()
+            print("--------")
         elif format == 3:
+            print("--------")
             imprime_fin1(p)
-            print()
             print(calcp_dias(k,r),"dias de la Tierra")
-            print()
+            print("--------")
 
 
     elif MenuPrincipal == 2:
          if p in planetas:
-                print("\n El planeta",p, "esta en la posicion", posicion(planetas),"del sistema solar")
+            print("--------")
+            print("\n El planeta",p, "esta en la posicion", posicion(planetas),"del sistema solar")
+            print("--------")
 
     elif MenuPrincipal == 3:
-        print ("La gravedad de la superficie del planeta",p,"es igual a:", "\n",calc_gravedad(gk,m,r_2))
+        print("--------")
+        print ("\nLa gravedad de la superficie del planeta",p,"es igual a:", "\n",calc_gravedad(gk,m,r_2))
+        print("--------")
 
     elif MenuPrincipal == 4:
+        print("--------")
         (imprime_fin4(l))
+        print("--------")
 
-    else: print("\nPor favor ingrese una opcion valida")      
+    elif MenuPrincipal == 6:
+        for i in range(len(planetas)):
+            if p == planetas[i]:
+                r_2 = radios_2[i]
+                m = masas[i]
+                print ("\n\n--> Planeta:",planetas[i])
+                print("--------")
+                print ("--> Radio:",radios_2[i])
+                print("--------")
+                print ("--> Masa:",masas[i],"\n\n")
 
-#Las Opciones (5, i) aun no estan habilitadas :(
+
+
+    else: print("\nPor favor ingrese una opcion valida")
+
+#La Opcion (5) aun no esta habilitada :(
 
 #Repeticion de ciclo
     MenuPrincipal = int(input("\nMenu Principal: \n \n ¿Que desea Calcular? \n \n 1: Periodo orbital \n 2: Posicion \n 3: Gravedad \n 4: Lunas \n 5: Comparar planetas \n\n i: Presione '6' para ver informacion general del planeta \n\n 0: Salir \n\nEscriba el numero de la opcion que desee:"))
