@@ -1,10 +1,15 @@
 # Lightyear-Calculator
 #### Descripcion
 
-El proyecto **Lightyear Calculator** es un programa que tendra como funcion calcular una variedad de datos acerca de los planetas del sistema solar, por ahora  periodos orbitales, pero en el siguiente avance periodos de rotacion, gravedad, lunas, etc.
+El proyecto **Lightyear Calculator**
 
-Este programa dara resultados de los periodos entre la variedad de cuerpos celestes de nuestro sistema solar a el sol.
-En la version actual de este programa, se le presenta un menu al usuario, con el cual ingresara la opcion que quiera calcular incluyendo especificaciones como obtener el resultado en años o en meses y el usuario ingresara un cuerpo celeste del sistema solar su preferencia.
+El programa funciona como una calculadora con interfaz de menu
+en la cual se le proporciona al usuario con diversas opciones 
+acerca de los planetas del sistema solar (periodos orbitales,
+gravedad, etc..)
+El programa tomara la opcion que el usuario seleccione y los 
+planetas ingresados por el usuario y devolvera la informacion
+solicitada.
 
 #### Pseudocodigo
 Inicio
