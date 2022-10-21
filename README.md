@@ -4,7 +4,7 @@
 **!!!ESTE PROGRAMA REQUIERE DE LA DESCARGA DE LA BIBLIOTECA TERMCOLOR!!!**
 Por lo que inclui dos archivos en el repositorio:
 
-1: Lightyear Calculator.py <--- (archivo sin requerimientos de descarga)
+1: Lightyear Calculator.py <--- (archivo original sin requerimientos de descarga)
 2: Lightyear Calculator Color.py <--- (archivo con biblioteca termcolor)
 
 El proyecto **Lightyear Calculator**
