@@ -11,6 +11,13 @@ El programa tomara la opcion que el usuario seleccione y los
 planetas ingresados por el usuario y devolvera la informacion
 solicitada.
 
+Este proyecto fue realizado con formulas de fisica que fueron investigadas cuidadosamente para obtener los resultados matematicos correctos 
+, por lo que el usuario puede confirmar en internet o sitios como NASA cualquier informacion que el programa le brinde para comprobar que esta es veridica y fue programada y calculada de una manera efectiva.
+
+
+
+
+
 #### Pseudocodigo inicial (Avance 1-2)
 Inicio
 import math
