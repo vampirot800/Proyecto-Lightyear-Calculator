@@ -5,7 +5,7 @@
 Por lo que inclui dos archivos en el repositorio:
 
 1: Lightyear Calculator.py <--- (archivo original sin requerimientos de descarga)
-2: LC-(+bibliotecas).py <--- (archivo extra con bibliotecas termcolor, prettytable)
+2: LightCalc(+bibliotecas).py <--- (archivo extra con bibliotecas termcolor, prettytable)
 
 El proyecto **Lightyear Calculator**
 
