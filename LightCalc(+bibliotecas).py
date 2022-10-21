@@ -2,7 +2,8 @@
 """
 
 Este archivo requiere de la descarga de la biblioteca termcolor
-(En caso de no descargar biblioteca, regresar al archivo original
+y prettytable
+(En caso de no descargar bibliotecas, regresar al archivo original
 ---> Lightyear Calculator.py )
 
 Proyecto Lightyear-Calculator Python.
