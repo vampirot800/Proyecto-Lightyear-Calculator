@@ -1,5 +1,4 @@
 
-
 """
 Proyecto Lightyear-Calculator Python.
 
@@ -13,13 +12,38 @@ solicitada.
 
 """
 
+""" 
+========================= Bibliotecas ==============================
+"""
+
 #Biblioteca y funciones math
 import math
 math.pow
 math.sqrt
 
+#Nuevas funciones/bibliotecas
 
-print("\n \n Bienvenido a LightYear Calculator.py! \n \n")
+from termcolor import cprint 
+"""
+Esta biblioteca le proporciona con una variedad de colores para texto
+en python, al igual que fonts que se implementan al codigo por medio
+de cprint ("texto","red",attrs=[bold])
+aprendido de https://pypi.org/project/termcolor/
+"""
+
+from prettytable import PrettyTable 
+x = PrettyTable()
+"""
+Esta biblioteca le proporciona al usuario con una forma visualmente
+placentera y ordenada de organizar informacion, por medio de tablas
+con columnas y filas que se implementan al programa por medio de
+x.add_column("Area", [, , , , ]), enc = ["Planeta", "Radio", "Masa"]
+y x.clear()
+aprendido de https://pypi.org/project/prettytable/
+"""
+
+
+cprint("\n \n Bienvenido a LightYear Calculator.py!","blue")
 
 
 """ 
@@ -36,9 +60,10 @@ radio_prop = 0
 radio_exacto = 0
 lunas = 0
 masas = 0
-
+p_2 =()
 interfaz_menu = (
 """
+
 
 ===================== Menu Principal:=========================
 
@@ -48,9 +73,8 @@ interfaz_menu = (
 2: Posicion 
 3: Gravedad 
 4: Lunas 
-5: Comparar planetas
 
-i: Presione '6' para ver informacion general del planeta 
+5: Grafica de info general 
 
 0: Salir
 
@@ -70,6 +94,17 @@ Como desea obtener el resultado?:
 ==============================================================
 *Escriba el numero de la opcion que desee:""")
 
+opciones_comp = (
+"""
+Que desea comparar?:
+
+1: Radio
+2: Masa 
+
+==============================================================
+*Escriba el numero de la opcion que desee:""")
+
+ 
 """ 
 ========================= Listas ==============================
 """
@@ -86,13 +121,17 @@ list_radios_prop = [0.39,0.72,1.00,1.52,5.20,9.54,19.19,30.06]
 #(radios exactos)
 list_radios_ex = [2440,6052,6371,3390,69911,58232,25362,24622] 
 
+#lista de numero de lunas por planeta
 list_lunas = [0,0,1,2,79,82,27,14]
 
+#lista de masas usada para
+# calcular la gravedad
 list_masas = [3.302*(pow(10,23)),4.869*(pow(10,24))
 ,5.9710*(pow(10,24)),6.4169*(pow(10,23)),1.899*(pow(10,27))
 ,5.688*(pow(10,26)),8.686*(pow(10,25)),1.024*(pow(10,26))]
 
-#Lista anidada
+#Lista anidada usada para agrupar la informacion 
+# de tres listas en una tabla
 matriz = [list_planetas,list_radios_ex,list_masas]
 
 
@@ -107,41 +146,87 @@ matriz = [list_planetas,list_radios_ex,list_masas]
 #Asignacion de posicion de planetas, Comparacion de planetas
 
 def calc_periodo(GAUSS,radio_prop):
+    """
+    recibe: GAUSS valor constante numerico, radio_prop valor numérico
+    saca la raiz cuadrada de la multiplicacion de GAUSS por 
+    radio_prop al cubo
+    devuelve: resultado de operación numérico (periodo orbital)
+    """
     res = math.sqrt((GAUSS)*(pow(radio_prop,3)))
     return res
 
+
 def calcp_meses(GAUSS,radio_prop):
+    """
+    recibe: GAUSS valor constante numerico, radio_prop valor numérico
+    multiplica el resultado de la funcion calc_periodo por 12
+    devuelve: resultado de operación numérico en meses (periodo orbital)
+    """
     a = calc_periodo(GAUSS,radio_prop)
     meses = (a)*(12)
     return meses
 
 def calcp_dias(GAUSS,radio_prop):
+    """
+    recibe: GAUSS valor constante numerico, radio_prop valor numérico
+    multiplica el resultado de la funcion calcp_meses por 30.44
+    devuelve: resultado de operación numérico en dias (periodo orbital)
+    """
     b = calcp_meses(GAUSS,radio_prop)
     dias = (b)*(30.44)
     return dias
 
-def calc_gravedad(GRAV,m,radio_exacto):
-    g = GRAV*(m/pow(radio_exacto*(pow(10,6)),2))
+def calc_gravedad(GRAV,masas,radio_exacto):
+    """
+    recibe: GRAV valor constante numerico, masa valor numerico, 
+    radio_exacto valor numerico
+    multiplica GRAV por la division de masas entre radio_exacto
+    elevado al cuadrado por 10 elevado a la sexta potencia 
+    devuelve: resultado de operación numérica (gravedad)
+    """
+    g = GRAV*(masas/pow(radio_exacto*(pow(10,6)),2))
     return g 
     
 
 def imprime_fin1(p):
+    """
+    recibe: p variable string planeta
+    devuelve: una impresion de texto final con la variable 
+    """
     print( "El periodo orbital de",p,
     "aproximado en dar la vuelta al sol es de:")
 
 def imprime_fin4(lunas):
+    """
+    recibe: lunas valor numerico
+    devuelve: una impresion de texto final con la variable 
+    """
     print("El planeta",p,"cuenta con un numero de:"
     ,lunas,"lunas confirmadas")
 
 
 def posicion(list_planetas):
+    """
+    recibe: lista list_planetas
+    hace uso de un indice para obtener la posicion del planeta en la lista
+    del planeta ingresado por el usuario sumando 1 para encontrarla
+    devuelve: una impresion de texto con la variable 
+    """
     return list_planetas.index(p)+1
 
+
 def informacion(matriz):
-    for i in matriz:
-        for j in matriz[i]:
-            if p in matriz[0]:
-                return matriz[i[j]]
+    """
+    recibe: matriz/lista anidada
+    hace uso de la biblioteca prettytable para generar una tabla
+    con todos los datos de la matriz y separarla en columnas
+    devuelve: la tabla de la matriz (x)
+    """
+    x.clear()
+    enc = ["Planeta", "Radio", "Masa"]
+    for i in range(len(matriz)):
+        x.add_column(enc[i], matriz[i])
+    print(x)
 
 
 """ 
@@ -150,77 +235,78 @@ def informacion(matriz):
 
 
 #Variable Menu
-MenuPrincipal = int(input(interfaz_menu))
+Menu_principal = int(input(interfaz_menu))
 
 
-while MenuPrincipal !=0:
+while Menu_principal !=0:
 
 #Input variable str(p) = planeta
-    p = str(input("Escriba el planeta del sistema solar de su preferencia: "))
+    if Menu_principal != 5:
+        p = str(input
+("""Escriba el planeta del sistema solar de su preferencia: """))
 
 
 #Asignacion de variables dependiendo del planeta         
-    for i in range(len(list_planetas)):
-        if p == list_planetas[i]:
-            radio_prop = list_radios_prop[i]
-            radio_exacto = list_radios_ex[i]
-            lunas = list_lunas[i]
-            masas = list_masas[i]
+        for i in range(len(list_planetas)):
+            if p == list_planetas[i]:
+                radio_prop = list_radios_prop[i]
+                radio_exacto = list_radios_ex[i]
+                lunas = list_lunas[i]
+                masas = list_masas[i]
+
 
 #Condiciones de Menu
-    if MenuPrincipal == 1: 
+    if Menu_principal == 1: 
         format = int(input(opciones_periodo))
         if format == 1:
             print("\n--------")
             imprime_fin1(p)
-            print(calc_periodo(GAUSS,radio_prop),"años de la Tierra")
+            a = (calc_periodo(GAUSS,radio_prop),"años terrestres")
+            cprint(a, "blue", attrs=["bold"])
             print("--------")
         elif format == 2:
-            print("--------")
+            print("\n--------")
             imprime_fin1(p)
-            print(calcp_meses(GAUSS,radio_prop),"meses de la Tierra")
+            b = (calcp_meses(GAUSS,radio_prop),"meses terrestres")
+            cprint(b,"green", attrs=["bold"])
             print("--------")
         elif format == 3:
-            print("--------")
+            print("\n--------")
             imprime_fin1(p)
-            print(calcp_dias(GAUSS,radio_prop),"dias de la Tierra")
+            c = (calcp_dias(GAUSS,radio_prop),"dias terrestres")
+            cprint(c,"magenta", attrs=["bold"])
             print("--------")
 
 
-    elif MenuPrincipal == 2:
+    elif Menu_principal == 2:
          if p in list_planetas:
-            print("--------")
-            print("\n El planeta",p, "esta en la posicion"
-            , posicion(list_planetas),"del sistema solar")
-            print("--------")
+            cprint("\n---------------", "green")
+            print(" El planeta",p, "esta en la posicion"
+            ,posicion(list_planetas),"del sistema solar")
+            cprint("---------------","green")
 
-    elif MenuPrincipal == 3:
-        print("--------")
-        print ("\nLa gravedad de la superficie del planeta",p,"es igual a:", 
-        "\n",calc_gravedad(GRAV,m,radio_exacto))
-        print("--------")
+    elif Menu_principal == 3:
+        cprint("\n---------------", "red")
+        print ("La gravedad de la superficie del planeta",p,"es igual a:", 
+        "\n",calc_gravedad(GRAV,masas,radio_exacto))
+        cprint("---------------","red")
 
-    elif MenuPrincipal == 4:
-        print("--------")
-        (imprime_fin4(lunas))
-        print("--------")
-
-    elif MenuPrincipal == 6:
-        for i in range(len(list_planetas)):
-            if p == list_planetas[i]:
-                radio_exacto = list_radios_ex[i]
-                m = list_masas[i]
-                print ("\n\n--> Planeta:",list_planetas[i])
-                print("--------")
-                print ("--> Radio:",list_radios_ex[i])
-                print("--------")
-                print ("--> Masa:",list_masas[i],"\n\n")
+    elif Menu_principal == 4:
+        cprint("\n---------------", "yellow")
+        imprime_fin4(lunas)
+        cprint("---------------","yellow")
 
 
-
-    else: print("\nPor favor ingrese una opcion valida")
-
-#La Opcion (5) aun no esta habilitada :(
+    
+    elif Menu_principal == 5:
+        informacion(matriz)
 
 #Repeticion de ciclo
-    MenuPrincipal = int(input(interfaz_menu))
+
+    input("\npresione enter para regresar al menu")
+
+    Menu_principal = int(input(interfaz_menu))
+
+        
+else: print("\nPor favor ingrese una opcion valida")
+
