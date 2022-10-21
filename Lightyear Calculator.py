@@ -31,9 +31,9 @@ math.pow
 math.sqrt
 
 #Nuevas funciones/bibliotecas
+""" #Biblioteca no habilitada en este archivo
 from prettytable import PrettyTable 
 x = PrettyTable()
-"""
 Esta biblioteca le proporciona al usuario con una forma visualmente
 placentera y ordenada de organizar informacion, por medio de tablas
 con columnas y filas que se implementan al programa por medio de
@@ -73,8 +73,6 @@ interfaz_menu = (
 2: Posicion 
 3: Gravedad 
 4: Lunas 
-
-5: Grafica de info general 
 
 0: Salir
 
@@ -214,20 +212,22 @@ def posicion(list_planetas):
     """
     return list_planetas.index(p)+1
 
-
+  
+  #Esta funcion solo esta habilitada con la biblioteca prettytable instalada
+"""
 def informacion(matriz):
-    """
+    
     recibe: matriz/lista anidada
     hace uso de la biblioteca prettytable para generar una tabla
     con todos los datos de la matriz y separarla en columnas
     devuelve: la tabla de la matriz (x)
-    """
+    
     x.clear()
     enc = ["Planeta", "Radio", "Masa"]
     for i in range(len(matriz)):
         x.add_column(enc[i], matriz[i])
     print(x)
-
+"""
 
 """ 
 =============== Parte Principal del programa =====================
@@ -241,7 +241,7 @@ Menu_principal = int(input(interfaz_menu))
 while Menu_principal !=0:
 
 #Input variable str(p) = planeta
-    if Menu_principal != 5:
+    if Menu_principal != 0:
         p = str(input
 ("""Escriba el planeta del sistema solar de su preferencia: """))
 
@@ -297,9 +297,10 @@ while Menu_principal !=0:
         print("---------------")
 
 
-    
+    """
     elif Menu_principal == 5:
         informacion(matriz)
+    """
 
 #Repeticion de ciclo
 
