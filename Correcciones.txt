@@ -1,1 +1,82 @@
+Avance 1-3: Empece creando mi repositorio en github con un programa que simplemente imprimia periodos de planetas, asignaba los datos investigados y los imprimia en pantalla, sin embargo acabe desechando este y empece a implementar variables, funciones y operadores aritmeticos, tambien agregue la biblioteca import math para poder calcular los periodos en base a variables numericas y operaciones en funciones. Finalmente implemente input para que el usuario ingrese el planeta de preferencia y lo hice de tal forma que el usuario pueda ingresarlo en minusculas, mayusculas, y en caso de ser erroneo, avisar al usuario;
+
+    def calc_periodo(GAUSS,radio_prop):
+        res = math.sqrt((GAUSS)*(pow(radio_prop,3)))
+        return res
+
+Avance 4: Implemente estructuras condicionales "if" ya que a base de ocho "if"s se asignaba el radio, la masa, y las lunas que tenia cada planeta distinto, asi agrupando los datos numericos y asi se calculaban las opciones de cada planeta ingresado, a su vez implemente que si el resultado (display en años) era menor a 1 año; lo calculaba en meses en vez de años. (En este avance me di cuenta que era imposible (o muy complicado) calcular el periodo de rotacion, por lo que elimine esta opcion para remplazarla por un calculo de gravedad)
+
+     if planeta = mercurio
+      radio = x
+      masa = y
+      lunas = z
+      
+     if planeta = venus
+     ...
+     
+     if planeta = tierra
+     ...
+     
+     if calc_periodo(...) < 1
+      print("El resultado es",(calc_periodo(...),*12,"meses")
+     
+     
+     
+     
+Avance 5: En este avance olvide subir el link del repositorio, sin embargo desarrolle gran parte de como funcionaria el programa hasta su version final, implemente una interfaz de menu, en la cual el usuario podria escoger el numero de la opcion que desee, y el programa calcularia esta opcion, A su vez meti toda la interfaz del menu y sus funciones en un ciclo while que regresaria al usuario al menu principal despues de obtener el resultado que deseara implemente nuevas funciones como por ejemplo el calculo de gravedad por planeta (haciendo uso de nuevas variables y calculos de la biblioteca import math), cambie la opcion que automaticamente calculaba los años a meses si el valor era menor a 1 y le di la opcion al usuario de elegir si quiere obtener el resultado en años, meses, o dias. Para concluir este avance acomode datos que tenia sueltos en el ciclo en funciones para darle orden al programa.
+
+  Menu Principal:
+
+  ¿Que desea Calcular?
+
+  1: Periodo orbital 
+  2: Posicion 
+  3: Gravedad
+  4: Lunas
+  5: Periodo de Rotacion
+
+  0: Salir
+
+  ==============================================================
+  *Escriba el numero de la opcion que desee:
+
+
+Avance 6-7: Los avances 6 y 7 fueron los mas cargados de programa, ya que cambie muchos tipos de datos, agregue nuevas funciones, agregue mas variables, elimine muchos 'if's para remplazarlos de una manera mucho mas efectiva haciendo uso de listas, metiendo casi todas las variables usadas en calculos en diferentes listas ( incluso creando una de estas con funciones de la biblioteca math) y asigne los valores de cada planeta con  estas dependiendo de el elemento en el que se encontraba ubicado el dato; Hice esto con ciclos for y lo agregue al programa final, asi como cree una lista anidada que contenia todas las listas y la meti en una funcion que imprimiera al usuario la informacion general del planeta escrito
+
+
+list_planetas = ["mercurio","venus","tierra","marte","jupiter",
+"saturno","urano","neptuno"]
+
+list_radios_prop = [0.39,0.72,1.00,1.52,5.20,9.54,19.19,30.06] 
+
+list_radios_ex = [2440,6052,6371,3390,69911,58232,25362,24622] 
+
+list_masas = [3.302*(pow(10,23)),4.869*(pow(10,24))
+,5.9710*(pow(10,24)),6.4169*(pow(10,23)),1.899*(pow(10,27))
+,5.688*(pow(10,26)),8.686*(pow(10,25)),1.024*(pow(10,26))]
+
+ for i in range(len(list_planetas)):
+            if p == list_planetas[i]:
+                radio_prop = list_radios_prop[i]
+                radio_exacto = list_radios_ex[i]
+                lunas = list_lunas[i]
+                masas = list_masas[i]
+
+Avance Final: En el ultimo avance agregue al programa todo el formato y la informacion pedida basandome en el proyecto demo.
+Este ultimo avance fue para mejorar el programa en todo aspecto, guarde muchos datos de formas mas efectivas en variables, funciones, y listas, asi como elimine varias funciones que no eran eficientes para remplazarlas por otras, cambie varias funciones ( por ejemplo la de imprimir informacion general del planeta escrito para remplazarlo con una impresion de la informacion de todos los planetas.
+Realice una investigacion profunda de las distintas bibliotecas en python para agregar funciones nuevas y no vistas en clase, decidi agregar las dos que mas me gustaron; la primera siendo termcolor, la cual le da color y fonts al texto, y la segunda biblioteca siendo prettytable, la cual consiste de tablas visualmente atractivas con columnas y filas que permiten imprimir datos en estas mismas ( para crear la tabla con informacion hice uso de una matriz con tres listas y agrupe cada elemento con el correspondiente de cada lista).
+
+
++----------+-------+------------------------+
+| Planeta  | Radio |          Masa          |
++----------+-------+------------------------+
+| mercurio |  2440 |       3.302e+23        |
+|  venus   |  6052 |       4.869e+24        |
+|  tierra  |  6371 |       5.971e+24        |                         Gracias por usar Lightyear Calculator.py!
+|  marte   |  3390 |       6.4169e+23       |
+| jupiter  | 69911 |       1.899e+27        |
+| saturno  | 58232 |       5.688e+26        |
+|  urano   | 25362 |       8.686e+25        |
+| neptuno  | 24622 | 1.0240000000000001e+26 |
++----------+-------+------------------------+
 
