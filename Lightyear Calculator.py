@@ -22,15 +22,6 @@ math.pow
 math.sqrt
 
 #Nuevas funciones/bibliotecas
-
-from termcolor import cprint 
-"""
-Esta biblioteca le proporciona con una variedad de colores para texto
-en python, al igual que fonts que se implementan al codigo por medio
-de cprint ("texto","red",attrs=[bold])
-aprendido de https://pypi.org/project/termcolor/
-"""
-
 from prettytable import PrettyTable 
 x = PrettyTable()
 """
@@ -43,7 +34,7 @@ aprendido de https://pypi.org/project/prettytable/
 """
 
 
-cprint("\n \n Bienvenido a LightYear Calculator.py!","blue")
+print("\n \n Bienvenido a LightYear Calculator.py!")
 
 
 """ 
@@ -262,39 +253,39 @@ while Menu_principal !=0:
             print("\n--------")
             imprime_fin1(p)
             a = (calc_periodo(GAUSS,radio_prop),"años terrestres")
-            cprint(a, "blue", attrs=["bold"])
+            print(a)
             print("--------")
         elif format == 2:
             print("\n--------")
             imprime_fin1(p)
             b = (calcp_meses(GAUSS,radio_prop),"meses terrestres")
-            cprint(b,"green", attrs=["bold"])
+            print(b)
             print("--------")
         elif format == 3:
             print("\n--------")
             imprime_fin1(p)
             c = (calcp_dias(GAUSS,radio_prop),"dias terrestres")
-            cprint(c,"magenta", attrs=["bold"])
+            print(c)
             print("--------")
 
 
     elif Menu_principal == 2:
          if p in list_planetas:
-            cprint("\n---------------", "green")
+            print("\n---------------")
             print(" El planeta",p, "esta en la posicion"
             ,posicion(list_planetas),"del sistema solar")
-            cprint("---------------","green")
+            print("---------------")
 
     elif Menu_principal == 3:
-        cprint("\n---------------", "red")
+        print("\n---------------")
         print ("La gravedad de la superficie del planeta",p,"es igual a:", 
         "\n",calc_gravedad(GRAV,masas,radio_exacto))
-        cprint("---------------","red")
+        print("---------------")
 
     elif Menu_principal == 4:
-        cprint("\n---------------", "yellow")
+        print("\n---------------")
         imprime_fin4(lunas)
-        cprint("---------------","yellow")
+        print("---------------")
 
 
     
