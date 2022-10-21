@@ -11,7 +11,7 @@ El programa tomara la opcion que el usuario seleccione y los
 planetas ingresados por el usuario y devolvera la informacion
 solicitada.
 
-#### Pseudocodigo
+#### Pseudocodigo inicial (Avance 1-2)
 Inicio
 import math
 math.pow, math.sqrt
