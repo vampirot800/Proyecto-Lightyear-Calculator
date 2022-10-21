@@ -4,8 +4,8 @@
 **!!!ESTE PROGRAMA REQUIERE DE LA DESCARGA DE LAs BIBLIOTECAs TERMCOLOR, PRETTYTABLE!!!**
 Por lo que inclui dos archivos en el repositorio:
 
-1: Lightyear Calculator.py <--- (archivo original sin requerimientos de descarga)
-2: LightCalc(+bibliotecas).py <--- (archivo extra con bibliotecas termcolor, prettytable)
+1: Lightyear Calculator.py <--- (archivo sin requerimientos de descarga)
+2: LightCalc(+bibliotecas).py <--- (archivo completo con bibliotecas termcolor, prettytable)
 
 El proyecto **Lightyear Calculator**
 
