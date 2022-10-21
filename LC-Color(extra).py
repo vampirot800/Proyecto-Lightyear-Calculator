@@ -1,5 +1,10 @@
 
 """
+
+Este archivo requiere de la descarga de la biblioteca termcolor
+(En caso de no descargar biblioteca, regresar al archivo original
+---> Lightyear Calculator.py )
+
 Proyecto Lightyear-Calculator Python.
 
 El programa funciona como una calculadora con interfaz de menu
