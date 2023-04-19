@@ -1,7 +1,7 @@
 # Lightyear-Calculator
 #### Descripcion
 
-**Este orograma requiere de la isntalación de bibliotecas (termcolor, prettytable) **
+Este programa requiere de la isntalación de bibliotecas (termcolor, prettytable)
 Existen dos versiones de archivos en el repositorio:
 
 1: Lightyear Calculator.py <--- (archivo sin requerimientos de descarga)
